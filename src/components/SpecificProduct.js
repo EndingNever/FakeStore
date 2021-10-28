@@ -1,23 +1,27 @@
 import React, { useContext } from 'react'
-import { useParams } from 'react-router'
 import APIContext from '../contexts/APIContext'
 
 
 function SpecificProduct() {
-    const {product}  = useContext(APIContext)
+    const { product } = useContext(APIContext)
 
     return (
         <div>
-            {product.category}
-            {product.description}
-            {/* <img src={product.image} alt="" /> */}
-            {/* <h1>PRODUCT TITLE: {product.title}</h1>
-            <h1>PRODUCT ID: {product.id}</h1>
-            <h1>PRODUCT description: {product.description}</h1>
-            <h1>PRODUCT price: {product.price}</h1> */}
+            {/* <h1>{product.id}</h1> */}
+            <div className="product-container">
+                <div className="product-image-container">
+                    <img className="product-image" src={product.image} alt="" style={{ width: "350px" }} />
+                </div>
+                <div className="product-text-container">
+                    <h1 className="product-title">{product.title}</h1>
+                    <h1>{product.description}</h1>
+                    <h1>${product.price.toFixed(2)}</h1>
+                    <p>{product.category}</p>
+                </div>
+            </div>
         </div>
     )
-    
+
 }
 
 export default SpecificProduct
