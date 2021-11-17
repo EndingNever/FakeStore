@@ -22,7 +22,7 @@ function Cart() {
     return (
         <>
             <p>
-                <Link to="/Checkout">checkout</Link>
+                {/* <Link to="/Checkout">checkout</Link> */}
             </p>
             <div>
                 {(cart).length >= 1 ?

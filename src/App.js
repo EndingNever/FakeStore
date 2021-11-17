@@ -47,20 +47,23 @@ function App() {
       <h2>Fake Store</h2>
       <nav>
         <ul>
-          <li><Link to="/Home">Home</Link></li>
-          <li><Link to="/Product">Product</Link></li>
-          <li><Link to="/Cart">Cart</Link></li>
+          <li><Link to="/FakeStore/Home">Home</Link></li>
+          <li><Link to="/FakeStore/Product">Product</Link></li>
+          <li><Link to="/FakeStore/Cart">Cart</Link></li>
         </ul>
       </nav>
       <div>
         <APIContext.Provider value={{ fake, product, cart, counts, setCounts, setProduct, setCart }}>
-          <Route exact path="/">
-            <Redirect to="/Home" />
+          <Route exact path="*">
+            <Redirect to="/FakeStore/Home" />
           </Route>
-          <Route exact path="/Home" component={ApiComponent} />
-          <Route exact path="/Product" component={SpecificProduct} />
-          <Route exact path="/Cart" component={Cart} />
-          <Route exact path="/Checkout" component={Checkout} />
+          <Route exact path="/">
+            <Redirect to="/FakeStore/Home" />
+          </Route>
+          <Route exact path="/FakeStore/Home" component={ApiComponent} />
+          <Route exact path="/FakeStore/Product" component={SpecificProduct} />
+          <Route exact path="/FakeStore/Cart" component={Cart} /> 
+          {/* <Route exact path="/FakeStore/Checkout" component={Checkout} /> */}
 
           {/* <SpecificProduct /> 
           <ApiComponent /> */}
