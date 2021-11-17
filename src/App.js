@@ -45,9 +45,6 @@ function App() {
   return (
     <Router >
       <h2>Fake Store</h2>
-      {/* <LoginContext.Provider value={{ username, setUsername }}>
-       {<Profile/>}
-      </LoginContext.Provider> */}
       <nav>
         <ul>
           <li><Link to="/Home">Home</Link></li>
@@ -57,7 +54,6 @@ function App() {
       </nav>
       <div>
         <APIContext.Provider value={{ fake, product, cart, counts, setCounts, setProduct, setCart }}>
-          {/* <Route path="/" exact component = {ApiComponent} /> */}
           <Route exact path="/">
             <Redirect to="/Home" />
           </Route>
