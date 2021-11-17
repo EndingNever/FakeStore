@@ -15,7 +15,7 @@ import Checkout from './components/Checkout'
 
 function App() {
   const [fake, setFake] = useState([])
-
+  const [loading, setLoading] = useState(true)
   const [cart, setCart] = useState([])
   const [counts, setCounts] = useState([]);
 
@@ -39,6 +39,7 @@ function App() {
 
   useEffect(() => {
     fakestore(setFake)
+    // setLoading(false)
   }, [])
 
 
@@ -52,6 +53,7 @@ function App() {
           <li><Link to="/FakeStore/Cart">Cart</Link></li>
         </ul>
       </nav>
+        {fake == false ? <h1>Loading Products...</h1> : 
       <div>
         <APIContext.Provider value={{ fake, product, cart, counts, setCounts, setProduct, setCart }}>
           <Route exact path="*">
@@ -60,6 +62,7 @@ function App() {
           <Route exact path="/">
             <Redirect to="/FakeStore/Home" />
           </Route>
+            
           <Route exact path="/FakeStore/Home" component={ApiComponent} />
           <Route exact path="/FakeStore/Product" component={SpecificProduct} />
           <Route exact path="/FakeStore/Cart" component={Cart} /> 
@@ -71,6 +74,7 @@ function App() {
           {/** TODO <CheckoutComponent/> */}
         </APIContext.Provider>
       </div>
+}
     </Router>
   )
 }
