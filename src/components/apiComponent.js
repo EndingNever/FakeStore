@@ -30,6 +30,7 @@ function ApiComponent() {
                                 setCart([...cart, values])
 
                                 setCounts([...counts, values.id])
+                                alert(`${values.title} Added!`)
                             }
                             }>Add To Cart</button>
                         </div>

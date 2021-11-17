@@ -19,6 +19,7 @@ function SpecificProduct() {
                     <p>{product.category}</p>
                     <button onClick={() => {
                                 setCart([...cart, product])
+                                alert(`${product.title} Added!`)
                             }
                             }>Add To Cart</button>
                 </div>
