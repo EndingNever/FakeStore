@@ -19,7 +19,7 @@ function ApiComponent() {
                     <>
                         <div className="box" key={values.id} onClick={() => setProduct(values)} >
                             <div className="content" >
-                                <h5><Link to="/Product">{values.title}</Link></h5>
+                                <h5><Link to="/FakeStore/Product">{values.title}</Link></h5>
                                 <p>{values.description}</p>
                             </div>
                             <img src={values.image} alt="" width="250" />

@@ -33,7 +33,7 @@ function Cart() {
                                 <div className="cart-container" key={values.id} onClick={() => { console.log(values.counts) }}>
                                     <img src={values.image} alt="" style={{ width: "200px" }} />
                                     <div>{values.title}</div>
-                                    <div>count </div>
+                                    {/* <div>count </div> */}
                                 </div>
                             </>
                         )

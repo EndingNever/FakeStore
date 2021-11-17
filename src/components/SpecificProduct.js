@@ -3,7 +3,7 @@ import APIContext from '../contexts/APIContext'
 
 
 function SpecificProduct() {
-    const { product } = useContext(APIContext)
+    const { product, cart, setCart, values } = useContext(APIContext)
 
     return (
         <div>
@@ -17,6 +17,10 @@ function SpecificProduct() {
                     <h1>{product.description}</h1>
                     <h1>${product.price.toFixed(2)}</h1>
                     <p>{product.category}</p>
+                    <button onClick={() => {
+                                setCart([...cart, product])
+                            }
+                            }>Add To Cart</button>
                 </div>
             </div>
         </div>
